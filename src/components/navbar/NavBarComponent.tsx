@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { useAppSelector } from "@hooks/reduxHooks";
-import { useAppDispatch } from "@hooks/reduxHooks";
+
+import { useAppSelector, useAppDispatch } from "@hooks/reduxHooks";
 import { logout } from "@store/auth";
 
 function NavBarComponent() {
@@ -12,15 +13,27 @@ function NavBarComponent() {
   return (
     <Navbar bg="dark" variant="dark">
       <Container fluid>
-        <Navbar.Brand href="/">Navbar</Navbar.Brand>
+        <Navbar.Brand as={Link} href="/">
+          Navbar
+        </Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          {isAuthenticated && <Nav.Link href="/todo-list">Todo List</Nav.Link>}
+          <Nav.Link as={Link} href="/">
+            Home
+          </Nav.Link>
+          {isAuthenticated && (
+            <Nav.Link as={Link} href="/todo-list">
+              Todo List
+            </Nav.Link>
+          )}
         </Nav>
         {!isAuthenticated && (
           <Nav>
-            <Nav.Link href="/login">Login</Nav.Link>
-            <Nav.Link href="/register">Register</Nav.Link>
+            <Nav.Link as={Link} href="/login">
+              Login
+            </Nav.Link>
+            <Nav.Link as={Link} href="/register">
+              Register
+            </Nav.Link>
           </Nav>
         )}
         {isAuthenticated && (

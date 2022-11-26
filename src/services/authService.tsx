@@ -5,9 +5,6 @@ export default class AuthService extends BaseService {
     const options = {
       method: "POST",
       body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-      redirect: "follow",
-      credentials: "include",
     };
 
     const fetchData = { url: "/auth/login", options, authenticate: false };
@@ -19,9 +16,6 @@ export default class AuthService extends BaseService {
     const options = {
       method: "POST",
       body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-      redirect: "follow",
-      credentials: "include",
     };
 
     const fetchData = { url: "/auth/register", options, authenticate: false };

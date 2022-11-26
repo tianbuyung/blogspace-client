@@ -7,7 +7,7 @@
 }
 
 .form {
-  max-width: 330px;
+  max-width: 400px;
   padding: 15px;
 }
 
@@ -21,7 +21,17 @@
   border-bottom-left-radius: 0;
 }
 
-.form input[type="password"] {
+.form input[type="email"] {
+  margin-bottom: -1px;
+  border-radius: 0;
+}
+
+.form input[id="password"] {
+  margin-bottom: -1px;
+  border-radius: 0;
+}
+
+.form input[id="confirmPassword"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;

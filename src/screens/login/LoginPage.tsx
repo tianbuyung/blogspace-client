@@ -3,8 +3,10 @@ import { NavBarComponent } from "@components/index";
 import { Button, Form } from "react-bootstrap";
 import { useRouter } from "next/router";
 
-import AuthService from "services/authService";
 import classes from "./LoginPage.module.css";
+import AuthService from "services/authService";
+import { setUser } from "@store/auth";
+import { useAppDispatch } from "@hooks/reduxHooks";
 
 const authService = new AuthService();
 
@@ -13,6 +15,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
 
   const router = useRouter();
+  const dispatch = useAppDispatch();
 
   const LoginHandler = async (event: any) => {
     event.preventDefault();
@@ -24,6 +27,7 @@ const LoginPage = () => {
     const response = await authService.login(body);
     if (response.code === 200) {
       localStorage.setItem("token", response.data.token);
+      dispatch(setUser());
       router.push("/");
     } else {
       alert(response.errors.message);

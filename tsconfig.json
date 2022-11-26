@@ -17,7 +17,8 @@
     "baseUrl": "src",
     "paths": {
       "@screens/*": ["screens/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@store/*": ["store/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

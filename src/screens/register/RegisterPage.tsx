@@ -1,7 +1,13 @@
 import React from "react";
+import { NavBarComponent } from "@components/index";
 
 const RegisterPage = () => {
-  return <div>RegisterPage</div>;
+  return (
+    <div>
+      <NavBarComponent />
+      RegisterPage
+    </div>
+  );
 };
 
 export default RegisterPage;

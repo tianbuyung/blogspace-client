@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BlogTodo
 
-## Getting Started
+## Description
 
-First, run the development server:
+This BlogTodo , an app where you can your activity and create own todo list also save with your own credentials. Using the most modern, most popular, and most in-demand technologies in the JavaScript ecosystem, such as Next.js, React.js, Bootstrap, Redux, and more!
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Website Link
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This website is live on <https://blogtodo.netlify.app/>. So, you can try all features by yourself or you can build your own version based on this below tutorial.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Installation
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. This App is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). So, it's need to requires [React v18.2.0](https://reactjs.org/) and [Bootstrap v5.2](https://getbootstrap.com/) to run.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. Clone this repository.
 
-## Learn More
+   ```sh
+   git clone https://github.com/tianbuyung/blogspace-client
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Mount the directory using terminal.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```sh
+   cd blogspace-client
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. Install dependencies via terminal
 
-## Deploy on Vercel
+   ```sh
+   npm ci
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Create `.env` file with contents according to the example (see [.env.example](/.env.example)) and your app will running default on PORT=3000
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+6. Start your App via terminal
+
+   ```sh
+   npm run dev
+   ```
+
+## Interaction with App in Local Environment
+
+- You can try this frontend for this app on <http://localhost:3000>
+- You can create your own REST API based on this tutorial <https://github.com/tianbuyung/blogspace-server> or you can try live REST API on <https://blogspace-server.herokuapp.com>
+- You can create new todo, read todo, edit todo and delete todo
+
+## Authors
+
+Septian Maulana
+
+## License
+
+[MIT](/LICENSE.md) License

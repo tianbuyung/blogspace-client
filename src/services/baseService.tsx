@@ -10,7 +10,6 @@ class BaseService {
       };
     }
 
-    options.credentials = "include";
     options.headers = {
       ...options.headers,
       "Content-Type": "application/json",

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import { NavBarComponent } from "@components/index";
 import { useAppSelector, useAppDispatch } from "@hooks/reduxHooks";
-import TodoListService from "services/todoListService";
+import TodoListService from "@services/todoListService";
 import { getTodoList } from "@store/todo";
 import TodoListBody from "./components/TodoListBody";
 

@@ -3,7 +3,7 @@ import { NavBarComponent } from "@components/index";
 import { Button, Form } from "react-bootstrap";
 import { useRouter } from "next/router";
 
-import AuthService from "services/authService";
+import AuthService from "@services/authService";
 import { setUser } from "@store/auth";
 import { useAppDispatch } from "@hooks/reduxHooks";
 

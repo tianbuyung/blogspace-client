@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Button, Form } from "react-bootstrap";
 
 import { NavBarComponent } from "@components/index";
-import AuthService from "services/authService";
+import AuthService from "@services/authService";
 
 import classes from "./RegisterPage.module.css";
 

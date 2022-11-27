@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import { NavBarComponent } from "@components/index";
@@ -10,6 +10,7 @@ import TodoListBody from "./components/TodoListBody";
 const todoListService = new TodoListService();
 
 const TodoListPage = () => {
+  const [isFetching, setIsFetching] = useState(false);
   const isAuthenticated = useAppSelector(
     (state) => state.login.isAuthenticated
   );
@@ -27,18 +28,19 @@ const TodoListPage = () => {
       try {
         const response = await todoListService.getTodoListByUserId();
         dispatch(getTodoList(response.data));
+        setIsFetching(false);
       } catch (error) {
         // silent
       }
     };
 
     getAllTodoList();
-  }, [dispatch]);
+  }, [dispatch, isFetching]);
 
   return (
     <div>
       <NavBarComponent />
-      <TodoListBody />
+      <TodoListBody setIsFetching={setIsFetching} />
     </div>
   );
 };

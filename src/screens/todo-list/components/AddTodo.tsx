@@ -7,7 +7,7 @@ import TodoListService from "@services/todoListService";
 
 const todoListService = new TodoListService();
 
-const AddTodo = () => {
+const AddTodo = ({ setIsFetching }: AddTodoListProps) => {
   const [todo, setTodo] = useState("");
   const showModal = useAppSelector((state) => state.ui.addTodoVisible);
   const dispatch = useAppDispatch();
@@ -26,6 +26,7 @@ const AddTodo = () => {
     const response = await todoListService.addTodoList(body);
     if (response.code === 200) {
       dispatch(toggleAddTodo());
+      setIsFetching(true);
     } else {
       alert(response.errors.message);
     }
@@ -59,5 +60,9 @@ const AddTodo = () => {
     </Modal>
   );
 };
+
+interface AddTodoListProps {
+  setIsFetching: any;
+}
 
 export default AddTodo;

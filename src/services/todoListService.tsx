@@ -22,14 +22,28 @@ export default class TodoListService extends BaseService {
     return await this.fetch(fetchData);
   };
 
-  editTodoList = async (data: EditTodoData) => {
+  editTodoList = async (data: any, id: number) => {
     const options = {
       method: "PUT",
-      body: JSON.stringify({ todo: data.todo }),
+      body: JSON.stringify({ todo: data.editTodo }),
     };
 
     const fetchData = {
-      url: `/todo-list/${data.id}`,
+      url: `/todo-list/${id}`,
+      options,
+      authenticate: true,
+    };
+
+    return await this.fetch(fetchData);
+  };
+
+  deleteTodoList = async (id: number) => {
+    const options = {
+      method: "DELETE",
+    };
+
+    const fetchData = {
+      url: `/todo-list/${id}`,
       options,
       authenticate: true,
     };
@@ -39,10 +53,5 @@ export default class TodoListService extends BaseService {
 }
 
 interface AddTodoData {
-  todo: string;
-}
-
-interface EditTodoData {
-  id: number;
   todo: string;
 }
